@@ -1486,15 +1486,15 @@ img {
   }
 
   .logo-img {
-    height: 38px;
+    height: 32px;
   }
 
   .navbar.scrolled .logo-img {
-    height: 34px;
+    height: 28px;
   }
 
   .navbar {
-    padding: 14px 0;
+    padding: 10px 0;
   }
 
   .hero {
@@ -1503,16 +1503,18 @@ img {
   }
 
   .hero-content {
-    padding: 100px 0 40px;
+    padding: 80px 0 30px;
   }
 
   .hero-badge {
-    font-size: 0.75rem;
-    padding: 6px 16px;
+    font-size: 0.72rem;
+    padding: 5px 14px;
+    margin-bottom: 16px;
   }
 
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    margin-bottom: 16px;
   }
 
   .hero-subtitle {
@@ -1604,13 +1606,26 @@ img {
 }
 
 @media (max-width: 480px) {
+  .hero-content {
+    padding: 70px 0 20px;
+  }
+
   .hero h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
   }
 
   .hero-stats {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .hero-buttons .btn {
+    padding: 12px 28px;
+    font-size: 0.9rem;
   }
 
   .container {
