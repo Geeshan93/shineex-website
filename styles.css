@@ -389,6 +389,16 @@ img {
 /* ===== About ===== */
 .about {
   padding: 120px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.about > .container,
+.services > .container,
+.testimonials > .container,
+.contact > .container {
+  width: 100%;
 }
 
 .about-grid {
@@ -503,6 +513,9 @@ img {
 .services {
   padding: 30px 0 80px;
   background: var(--gray-50);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .services-grid {
@@ -576,6 +589,9 @@ img {
 /* ===== Testimonials ===== */
 .testimonials {
   padding: 120px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .testimonials-grid {
@@ -793,6 +809,9 @@ img {
 .contact {
   padding: 120px 0;
   background: var(--gray-50);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .contact-grid {
