@@ -1466,17 +1466,34 @@ img {
     color: var(--white) !important;
   }
 
+  .logo-img {
+    height: 38px;
+  }
+
+  .navbar.scrolled .logo-img {
+    height: 34px;
+  }
+
+  .navbar {
+    padding: 14px 0;
+  }
+
   .hero {
     min-height: 100vh;
     padding: 0;
   }
 
   .hero-content {
-    padding: 120px 0 60px;
+    padding: 100px 0 40px;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 6px 16px;
   }
 
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .hero-subtitle {
