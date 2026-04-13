@@ -313,11 +313,33 @@ if (heroSection) heroObserver.observe(heroSection);
 // ===== Text Reveal Animation for Hero =====
 const heroH1 = document.querySelector('.hero h1');
 if (heroH1) {
-  const words = heroH1.innerHTML.split(/(\s+|<br>)/);
-  heroH1.innerHTML = words.map((word, i) => {
-    if (word === '<br>' || word.trim() === '') return word;
-    return `<span class="word-reveal" style="animation-delay: ${0.4 + i * 0.08}s">${word}</span>`;
-  }).join('');
+  // Process text nodes only, preserve HTML elements like <span> and <br>
+  const processNode = (node, delay) => {
+    let currentDelay = delay;
+    node.childNodes.forEach(child => {
+      if (child.nodeType === 3) { // Text node
+        const words = child.textContent.split(/(\s+)/);
+        const fragment = document.createDocumentFragment();
+        words.forEach(word => {
+          if (word.trim() === '') {
+            fragment.appendChild(document.createTextNode(word));
+          } else {
+            const span = document.createElement('span');
+            span.className = 'word-reveal';
+            span.style.animationDelay = currentDelay + 's';
+            span.textContent = word;
+            fragment.appendChild(span);
+            currentDelay += 0.08;
+          }
+        });
+        child.replaceWith(fragment);
+      } else if (child.nodeType === 1 && child.tagName !== 'BR') { // Element node
+        currentDelay = processNode(child, currentDelay);
+      }
+    });
+    return currentDelay;
+  };
+  processNode(heroH1, 0.4);
 }
 
 // ===== Gradient Text Animation on Section Headers =====
