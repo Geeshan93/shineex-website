@@ -92,6 +92,16 @@ document.querySelectorAll('.cta-content').forEach(el => {
   observer.observe(el);
 });
 
+// Partner section
+document.querySelectorAll('.partner-text').forEach(el => {
+  el.classList.add('fade-in-left');
+  observer.observe(el);
+});
+document.querySelectorAll('.partner-logo-wrapper').forEach(el => {
+  el.classList.add('fade-in-right');
+  observer.observe(el);
+});
+
 // Fallback: make all animated elements visible after 2s
 setTimeout(() => {
   document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
